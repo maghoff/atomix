@@ -13,7 +13,7 @@ Usage
 -----
 
     npm install atomix
-    ./node_modules/.bin/atomix [spec]
+    ./node_modules/.bin/atomix [spec-file]
 
 You can either specify one input file on the command line or give no arguments.
 If you give no command line arguments, Atomix will read the JSON spec from
@@ -80,3 +80,51 @@ which means it accepts typical date formats you see on computers, for example:
 [rfc2822]: http://tools.ietf.org/html/rfc2822#page-14
 [rfc3339]: https://www.ietf.org/rfc/rfc3339.txt
 [iso8601]: https://xkcd.com/1179/
+
+Full example
+------------
+
+Given the following JSON input:
+
+	{
+		"feed": {
+			"title": "Feed title",
+			"description": "Description",
+			"link": "http://example.com",
+			"author": {
+				"name": "Example Com",
+				"email": "user@example.com"
+			}
+		},
+		"posts": [
+			{
+				"link": "first-post",
+				"title": "First Post!",
+				"shortdesc": "First!"
+			}
+		]
+	}
+
+Atomix will out put this Atom feed:
+
+	<?xml version="1.0" encoding="utf-8"?>
+	<feed xmlns="http://www.w3.org/2005/Atom">
+		<title>Feed title</title>
+		<link>http://example.com</link>
+		<updated>2015-09-30T10:19:15Z</updated>
+		<author>
+			<name>Example Com</name>
+			<email>user@example.com</email>
+		</author>
+		<link rel="alternate" href="http://example.com"/>
+		<subtitle>Description</subtitle>
+		<generator>Feed for Node.js</generator>
+		<entry>
+			<title type="html"><![CDATA[First Post!]]></title>
+			<id>http://example.com/first-post</id>
+			<link href="http://example.com/first-post">
+			</link>
+			<updated>2015-09-30T10:19:15Z</updated>
+			<summary type="html"><![CDATA[First!]]></summary>
+		</entry>
+	</feed>
