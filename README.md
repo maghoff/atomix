@@ -105,7 +105,7 @@ Given the following JSON input:
 		]
 	}
 
-Atomix will out put this Atom feed:
+Atomix will output this Atom feed:
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<feed xmlns="http://www.w3.org/2005/Atom">
