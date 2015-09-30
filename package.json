@@ -1,10 +1,10 @@
 {
   "name": "atomix",
-  "version": "0.0.0-2",
+  "version": "0.0.0-3",
   "description": "Atom feed generator that takes JSON input",
-  "main": "index.js",
+  "main": "cli.js",
   "bin": {
-    "atomix": "index.js"
+    "atomix": "cli.js"
   },
   "repository": {
     "type": "git",
