@@ -1,0 +1,27 @@
+{
+  "name": "atomix",
+  "version": "0.0.0",
+  "description": "Atom feed generator that takes JSON input",
+  "main": "atomix.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maghoff/atomix.git"
+  },
+  "keywords": [
+    "atom",
+    "rss",
+    "feed",
+    "generator",
+    "json"
+  ],
+  "author": "Magnus Hoff <maghoff@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maghoff/atomix/issues"
+  },
+  "homepage": "https://github.com/maghoff/atomix",
+  "preferGlobal": true,
+  "dependencies": {
+    "feed": "^0.2.6"
+  }
+}
